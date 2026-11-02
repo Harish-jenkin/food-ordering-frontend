@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+  --color-brand: #e85d04;
+  --color-brand-dark: #c2410c;
+  --color-cream: #f8f1e7;
+  --color-ink: #1c1917;
+  --color-muted: #57534e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #faf7f2;
+  color: #1c1917;
+  font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.font-display {
+  font-family: "Fraunces", Georgia, serif;
+}
+
+.container-page {
+  width: min(1120px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.field-shell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-radius: 1.1rem;
+  border: 1px solid #e7e5e4;
+  background: #fff;
+  padding: 0.85rem 1rem;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.field-shell:focus-within {
+  border-color: #e85d04;
+  box-shadow: 0 0 0 4px rgb(232 93 4 / 0.12);
+}
+
+.field-shell input,
+.field-shell textarea,
+.field-shell select {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  outline: none;
+  color: #1c1917;
+}
+
+@keyframes cart-pop {
+  0% { transform: scale(1); }
+  35% { transform: scale(1.22); }
+  100% { transform: scale(1); }
+}
+
+.cart-pop {
+  animation: cart-pop 0.45s ease;
+}
+
+@keyframes cart-toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.cart-toast {
+  animation: cart-toast-in 0.22s ease;
+}
+
+.-top-0\.5 {
+    top: calc(var(--spacing) * 4.1);
+}
+.-right-0\.5 {
+  right: calc(var(--spacing) * -5.5);
+}
